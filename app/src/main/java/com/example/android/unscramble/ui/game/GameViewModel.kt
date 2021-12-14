@@ -1,6 +1,5 @@
 package com.example.android.unscramble.ui.game
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -23,7 +22,6 @@ class GameViewModel: ViewModel() {
     private lateinit var currentWord: String
 
     init {
-        Log.d("GameFragment", "GameViewModel created!")
         getNextWord()
     }
 
@@ -42,7 +40,6 @@ class GameViewModel: ViewModel() {
             _currentWordCount.value = (_currentWordCount.value)?.inc()
             wordsList.add(currentWord)
         }
-        Log.d("cheating" , currentWord)
     }
 
     fun isUserWordCorrect(playerWord: String): Boolean {
@@ -69,10 +66,5 @@ class GameViewModel: ViewModel() {
         _currentWordCount.value = 0
         wordsList.clear()
         getNextWord()
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        Log.d("GameFragment", "GameViewModel destroyed!")
     }
 }
