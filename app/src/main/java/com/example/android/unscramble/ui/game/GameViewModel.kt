@@ -58,12 +58,16 @@ class GameViewModel: ViewModel() {
         } else false
     }
 
-
-
     private fun increaseScore() {
         _score += SCORE_INCREASE
     }
 
+    fun reinitializeData() {
+        _score = 0
+        _currentWordCount = 0
+        wordsList.clear()
+        getNextWord()
+    }
 
     override fun onCleared() {
         super.onCleared()

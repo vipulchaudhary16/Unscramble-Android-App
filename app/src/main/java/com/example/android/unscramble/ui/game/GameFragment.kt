@@ -93,6 +93,8 @@ class GameFragment : Fragment() {
         }
 
     }
+
+
     /*
      * Gets a random word for the list of words and shuffles the letters in it.
      */
@@ -106,6 +108,7 @@ class GameFragment : Fragment() {
      * restart the game.
      */
     private fun restartGame() {
+        viewModel.reinitializeData()
         setErrorTextField(false)
         updateNextWordOnScreen()
     }
